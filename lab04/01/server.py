@@ -3,14 +3,14 @@
 
 # Socket Python Doc: https://docs.python.org/2.7/library/socket.html
 
-# first of all import the socket library
+# First of all import the socket library
 import socket
 
-# next create a socket object
+# Next create a socket object
 sock = socket.socket()
 print "Socket successfully created"
 
-# reserve a port on your computer in our
+# Reserve a port on your computer in our
 # case it is 12345 but it can be anything
 port = 12345
 
@@ -18,7 +18,7 @@ port = 12345
 sock.bind(('localhost', port))
 print "socket binded to %s" %(port)
 
-# put the socket into listening mode
+# Put the socket into listening mode
 sock.listen(1)
 print "socket is listening"
 
@@ -26,7 +26,7 @@ print "socket is listening"
 conn, addr = sock.accept()
 print 'Got connection from', addr
 
-# send a thank you message to the client.
+# Send a thank you message to the client.
 conn.send('Thank you for connecting')
 
 # Close the connection with the client

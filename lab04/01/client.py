@@ -12,12 +12,12 @@ sock = socket.socket()
 # Define the port on which you want to connect
 port = 12345
 
-# connect to the server on local computer
+# Connect to the server on local computer
 sock.connect(('127.0.0.1', port))
 
-# receive data from the server
+# Receive data from the server
 buffer_size = 1024
 print sock.recv(buffer_size)
 
-# close the connection
+# Close the connection
 sock.close()
