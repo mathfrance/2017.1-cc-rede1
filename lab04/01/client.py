@@ -16,7 +16,8 @@ port = 12345
 sock.connect(('127.0.0.1', port))
 
 # receive data from the server
-print sock.recv(1024)
+buffer_size = 1024
+print sock.recv(buffer_size)
 
 # close the connection
 sock.close()

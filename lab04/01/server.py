@@ -23,7 +23,7 @@ sock.bind(('', port))
 print "socket binded to %s" %(port)
 
 # put the socket into listening mode
-sock.listen(5)
+sock.listen(1)
 print "socket is listening"
 
 # a forever loop until we interrupt it or
