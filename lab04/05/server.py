@@ -3,32 +3,31 @@
 
 # Socket Python Doc: https://docs.python.org/2.7/library/socket.html
 
-# First of all import the socket library
+# Importe o pacote do socket.
 import socket
 
-# Next create a TCP/IP socket object
+# Cria um objeto socket TCP/IP.
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print "Socket successfully created"
 
-# Reserve a port on your computer in our
-# case it is 12345 but it can be anything
+# Reserve a porta na qual deseja aceitar conexões.
 port = 12345
 
-# Next bind to the port
+# Ative a porta para o servidor
 sock.bind(('localhost', port))
-print "socket binded to %s" %(port)
+print "Socket binded to %s" %(port)
 
-# Put the socket into listening mode
-sock.listen(1)
-print "socket is listening"
+# Coloque o socket no modo de listening (escuta de conexão).
+sock.listen(5)
+print "Socket is listening"
 
 while True:
-    # Establish connection with client.
+    # Espere estabelecer conexão com um cliente.
     conn, addr = sock.accept()
     print 'Got connection from', addr
 
-    # Send a thank you message to the client.
+    # Envie uma mensagem para o cliente.
     conn.send('Thank you for connecting')
 
-    # Close the connection with the client
+    # Feche a conexão com o cliente.
     conn.close()

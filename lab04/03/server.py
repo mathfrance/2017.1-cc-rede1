@@ -3,28 +3,27 @@
 
 # Socket Python Doc: https://docs.python.org/2.7/library/socket.html
 
-# First of all import the socket library
+# Importe o pacote do socket.
 import socket
 
-# Next create a socket object
+# Cria um objecto socket UDP.
 ipv4 = socket.AF_INET
 udp = socket.SOCK_DGRAM
 sock = socket.socket(ipv4, udp)
 print "Socket successfully created"
 
-# Reserve a port on your computer in our
-# case it is 12345 but it can be anything
+# Reserve a porta na qual deseja aceitar conexões.
 port = 12345
 
-# Next bind to the port to server
+# Ative a porta para o servidor
 sock.bind(('127.0.0.1', port))
-print "socket binded to %s" %(port)
+print "Socket binded to %s" %(port)
 
 while True:
-    # Connect and receive data from client
+    # Conecte e receba dados do cliente.
     data, addr = sock.recvfrom(1024)
     print 'Got connection from', addr
+    print 'Data recv: ', data
 
-    # Send the data to client
-    print data
-    sock.sendto(str('Hi Client'), addr)
+    # Envie dados para o cliente.
+    sock.sendto('Hi Client', addr)

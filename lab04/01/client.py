@@ -3,21 +3,21 @@
 
 # Socket Python Doc: https://docs.python.org/2.7/library/socket.html
 
-# Import socket module
+# Importe o pacote do socket.
 import socket
 
-# Create a socket object
+# Cria um objeto socket por padrão TCP/IP.
 sock = socket.socket()
 
-# Define the port on which you want to connect
+# Defina a porta na qual você deseja se conectar.
 port = 12345
 
-# Connect to the server on local computer
+# Conecte ao servidor que está executando localmente.
 sock.connect(('127.0.0.1', port))
 
-# Receive data from the server
+# Receba os dados do servidor.
 buffer_size = 1024
 print sock.recv(buffer_size)
 
-# Close the connection
+# Feche a conexão.
 sock.close()
