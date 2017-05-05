@@ -16,8 +16,7 @@ class PeerNode(object):
         :param server_port: Porta do servidor que o peer deve ouvir as conexões.
         :param server_host: Endreço do servidor do node.
         :param peer_id: Identificador do peer. Caso não seja definido, será (host:port) do node.
-        :param max_peers: Número máximo de peers que esse node é capaz de catalogar. 
-        Caso seja definido como 0 pode permitir um número ilimitado de peers.
+        :param max_peers: Número máximo de peers que esse node é capaz de catalogar. Caso seja definido como 0 pode permitir um número ilimitado de peers.
         """
 
         self.server_port = server_port
@@ -25,7 +24,6 @@ class PeerNode(object):
         self.peer_id = peer_id if peer_id is not None else '%s:%d' % (self.server_host, self.server_port)
         self.max_peers = max_peers
 
-        #
         self.peers = {}  # lista dos peers que esse node conhece.
 
         # Handles | contém as funções que devem ser executadas a partir do "tipo de messagens" que são definidas
