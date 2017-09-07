@@ -19,5 +19,14 @@ sock.connect(('127.0.0.1', port))
 buffer_size = 1024
 print sock.recv(buffer_size)
 
+#Envia mensagem ao servidor.
+sock.send ('frase para ficar maiuscula')
+
+#recebe e printa a mensagem modificada
+print sock.recv(buffer_size)
+
+#frase final
+print sock.recv(buffer_size)
+
 # Feche a conexão.
 sock.close()

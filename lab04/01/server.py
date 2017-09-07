@@ -25,6 +25,13 @@ print "Socket is listening"
 conn, addr = sock.accept()
 print 'Got connection from', addr
 
+#Captura a mensagem do cliente.
+conn.send('Escreva sua mensagem')
+msg = conn.recv(1024)
+
+#Print de retorno com caracteres maiusculos.
+conn.send(msg.upper())
+
 # Envie uma mensagem para o cliente.
 conn.send('Thank you for connecting')
 
